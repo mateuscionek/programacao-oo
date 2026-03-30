@@ -1,0 +1,5 @@
+name: estudo_dirigido
+description: Estudo Dirigido 1 de POO
+version: 1.0.0
+environment:
+  sdk: '>=2.12.0 <4.0.0'
