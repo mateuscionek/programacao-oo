@@ -1,18 +1,15 @@
 class Data {
-  int dia;
-  int mes;
-  int ano;
+  int _dia = 1;
+  int _mes = 1;
+  int _ano = 2024;
 
-  Data(this.dia, this.mes, this.ano) {
-    if (this.dia < 1 || this.dia > 31) this.dia = 1;
-    if (this.mes < 1 || this.mes > 12) this.mes = 1;
-    if (this.ano <= 0) this.ano = 2024;
+  Data(int dia, int mes, int ano) {
+    if (dia >= 1 && dia <= 31) _dia = dia;
+    if (mes >= 1 && mes <= 12) _mes = mes;
+    if (ano > 0) _ano = ano;
   }
 
   void exibirData() {
-    String d = dia.toString().padLeft(2, '0');
-    String m = mes.toString().padLeft(2, '0');
-    String a = ano.toString().padLeft(4, '0');
-    print("Data: $d/$m/$a");
+    print("Data: $_dia/$_mes/$_ano");
   }
 }

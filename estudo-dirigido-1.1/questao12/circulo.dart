@@ -1,17 +1,20 @@
 class Circulo {
-  double raio;
-  String cor;
-  static const double pi = 3.14;
+  double _raio;
+  String _cor;
+  static const double PI = 3.14;
 
-  Circulo(this.raio, this.cor) {
-    if (this.raio <= 0) this.raio = 1.0;
-    if (this.cor.isEmpty) this.cor = "Branco";
+  Circulo(this._raio, this._cor) {
+    if (this._raio <= 0) this._raio = 1.0;
+    if (this._cor.isEmpty) this._cor = "Branco";
   }
 
-  double calcularArea() => pi * (raio * raio);
-  double calcularPerimetro() => 2 * pi * raio;
+  double calcularArea() => PI * (_raio * _raio);
+
+  double calcularPerimetro() => 2 * PI * _raio;
 
   void exibirResumo() {
-    print("Círculo $cor | Raio: $raio | Área: ${calcularArea()} | Perímetro: ${calcularPerimetro()}");
+    print("Raio: $_raio | Cor: $_cor");
+    print("Área: ${calcularArea().toStringAsFixed(2)}");
+    print("Perímetro: ${calcularPerimetro().toStringAsFixed(2)}\n");
   }
 }

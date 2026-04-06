@@ -1,20 +1,20 @@
 import 'produto.dart';
 
 class Pedido {
-  int numero;
-  Produto produto;
-  int quantidade;
+  int _numero;
+  Produto _produto;
+  int _quantidade;
 
-  Pedido(this.numero, this.produto, this.quantidade) {
-    if (this.numero <= 0) this.numero = 1;
-    if (this.quantidade <= 0) this.quantidade = 1;
+  Pedido(this._numero, this._produto, this._quantidade) {
+    if (this._numero <= 0) this._numero = 1;
+    if (this._quantidade <= 0) this._quantidade = 1;
   }
 
-  double calcularTotal() => produto.preco * quantidade;
+  double calcularTotal() => _produto.preco * _quantidade;
 
   void exibirPedido() {
-    print("Pedido #$numero");
-    print("Produto: ${produto.nome} (R\$ ${produto.preco} cada)");
-    print("Quantidade: $quantidade | Total: R\$ ${calcularTotal()}\n");
+    print("Pedido #${_numero}");
+    print("Produto: ${_produto.nome} (R\$ ${_produto.preco} cada)");
+    print("Quantidade: ${_quantidade} | Total: R\$ ${calcularTotal()}\n");
   }
 }

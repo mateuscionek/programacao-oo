@@ -1,5 +1,5 @@
 class Produto {
-  String nome;
-  double preco;
-  Produto(this.nome, this.preco);
+  String _nome;
+  double _preco;
+  Produto(this._nome, this._preco);
 }

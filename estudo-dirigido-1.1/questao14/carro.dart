@@ -1,16 +1,16 @@
 import 'motor.dart';
 
 class Carro {
-  String modelo;
-  Motor motor;
+  String _modelo;
+  Motor _motor;
 
-  Carro(this.modelo, this.motor) {
-    if (this.modelo.isEmpty) this.modelo = "Modelo Padrão";
+  Carro(this._modelo, this._motor) {
+    if (this._modelo.isEmpty) this._modelo = "Modelo Padrão";
   }
 
   void exibirCarro() {
-    print("Carro: $modelo");
-    motor.exibirMotor();
+    print("Carro: ${_modelo}");
+    _motor.exibirMotor();
     print("---");
   }
 }

@@ -1,15 +1,27 @@
 class Contador {
-  int valor;
+  int _valor;
 
-  Contador(int valorInicial) : valor = valorInicial >= 0 ? valorInicial : 0;
-
-  void incrementar() => valor++;
-
-  void decrementar() {
-    if (valor > 0) valor--;
+  Contador(this._valor) {
+    if (this._valor < 0) {
+      this._valor = 0;
+    }
   }
 
-  void zerar() => valor = 0;
+  void incrementar() {
+    _valor++;
+  }
 
-  void exibirValor() => print("Contador: $valor");
+  void decrementar() {
+    if (_valor > 0) {
+      _valor--;
+    }
+  }
+
+  void zerar() {
+    _valor = 0;
+  }
+
+  void exibirValor() {
+    print("Valor atual: $_valor");
+  }
 }

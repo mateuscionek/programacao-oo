@@ -1,9 +1,9 @@
 class Musica {
-  String titulo;
-  String artista;
-  int duracaoSegundos;
+  String _titulo;
+  String _artista;
+  int _duracaoSegundos;
 
-  Musica(this.titulo, this.artista, this.duracaoSegundos) {
-    if (this.duracaoSegundos <= 0) this.duracaoSegundos = 180;
+  Musica(this._titulo, this._artista, this._duracaoSegundos) {
+    if (this._duracaoSegundos <= 0) this._duracaoSegundos = 180;
   }
 }

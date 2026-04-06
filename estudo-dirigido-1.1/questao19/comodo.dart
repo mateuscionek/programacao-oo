@@ -1,8 +1,8 @@
 class Comodo {
-  String nome;
-  double tamanho;
+  String _nome;
+  double _tamanho;
 
-  Comodo(this.nome, this.tamanho) {
-    if (this.tamanho <= 0) this.tamanho = 10.0;
+  Comodo(this._nome, this._tamanho) {
+    if (this._tamanho <= 0) this._tamanho = 10.0;
   }
 }

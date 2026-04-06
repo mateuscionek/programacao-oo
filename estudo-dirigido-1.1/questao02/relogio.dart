@@ -1,21 +1,18 @@
-
-
 class Relogio {
-  int hora;
-  int minuto;
-  int segundo;
+  int _hora = 0;
+  int _minuto = 0;
+  int _segundo = 0;
 
-  Relogio(this.hora, this.minuto, this.segundo) {
-    if (hora < 0 || hora > 23) throw ArgumentError('Hora deve ser entre 0 e 23');
-    if (minuto < 0 || minuto > 59) throw ArgumentError('Minuto deve ser entre 0 e 59');
-    if (segundo < 0 || segundo > 59) throw ArgumentError('Segundo deve ser entre 0 e 59');
+  Relogio(int hora, int minuto, int segundo) {
+    if (hora >= 0 && hora <= 23) _hora = hora;
+    if (minuto >= 0 && minuto <= 59) _minuto = minuto;
+    if (segundo >= 0 && segundo <= 59) _segundo = segundo;
   }
 
-  // Formata com zero à esquerda se necessário (ex: 9 -> "09")
-  String _pad(int valor) => valor.toString().padLeft(2, '0');
-
   void exibirHorario() {
-    print('Horário: ${_pad(hora)}:${_pad(minuto)}:${_pad(segundo)}');
-    print('---');
+    String h = _hora.toString().padLeft(2, '0');
+    String m = _minuto.toString().padLeft(2, '0');
+    String s = _segundo.toString().padLeft(2, '0');
+    print("Horário: $h:$m:$s");
   }
 }

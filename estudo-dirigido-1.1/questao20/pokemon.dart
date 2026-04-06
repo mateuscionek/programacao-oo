@@ -1,12 +1,12 @@
 class Pokemon {
-  int numero;
-  String nome;
-  String tipo;
-  int nivel;
-  int hp;
+  int _numero;
+  String _nome;
+  String _tipo;
+  int _nivel;
+  int _hp;
 
-  Pokemon(this.numero, this.nome, this.tipo, this.nivel, this.hp) {
-    if (this.nivel < 1 || this.nivel > 100) this.nivel = 1;
-    if (this.hp <= 0) this.hp = 10;
+  Pokemon(this._numero, this._nome, this._tipo, this._nivel, this._hp) {
+    if (this._nivel < 1 || this._nivel > 100) this._nivel = 1;
+    if (this._hp <= 0) this._hp = 10;
   }
 }

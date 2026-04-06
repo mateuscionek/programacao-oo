@@ -1,42 +1,56 @@
 import 'dart:math';
 
 class Triangulo {
-  double lado1, lado2, lado3;
-  String caractere;
+  double _lado1;
+  double _lado2;
+  double _lado3;
+  String _caractere;
 
-  Triangulo(this.lado1, this.lado2, this.lado3, this.caractere) {
-    if (lado1 <= 0) lado1 = 1;
-    if (lado2 <= 0) lado2 = 1;
-    if (lado3 <= 0) lado3 = 1;
-    if (caractere.isEmpty || caractere.length > 1) caractere = "*";
+  Triangulo(this._lado1, this._lado2, this._lado3, this._caractere) {
+    if (_lado1 <= 0) _lado1 = 1;
+    if (_lado2 <= 0) _lado2 = 1;
+    if (_lado3 <= 0) _lado3 = 1;
+    if (_caractere.isEmpty || _caractere.length > 1) _caractere = "*";
 
-    if (!(lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1)) {
-      this.lado1 = 3; this.lado2 = 4; this.lado3 = 5; 
+    if (!(_lado1 + _lado2 > _lado3 && _lado1 + _lado3 > _lado2 && _lado2 + _lado3 > _lado1)) {
+      _lado1 = 3;
+      _lado2 = 4;
+      _lado3 = 5;
     }
   }
 
-  double calcularPerimetro() => lado1 + lado2 + lado3;
+  void setLado1(double valor) => _lado1 = valor > 0 ? valor : _lado1;
+  void setLado2(double valor) => _lado2 = valor > 0 ? valor : _lado2;
+  void setLado3(double valor) => _lado3 = valor > 0 ? valor : _lado3;
+
+  double calcularPerimetro() => _lado1 + _lado2 + _lado3;
 
   double calcularArea() {
-    double p = calcularPerimetro() / 2;
-    return sqrt(p * (p - lado1) * (p - lado2) * (p - lado3));
+    double s = calcularPerimetro() / 2;
+    return sqrt(s * (s - _lado1) * (s - _lado2) * (s - _lado3));
   }
 
   void desenharEsquerda() {
-    int altura = [lado1, lado2, lado3].reduce(max).toInt();
+    int altura = _lado1.toInt();
     for (int i = 1; i <= altura; i++) {
-      print(caractere * i);
+      print(_caractere * i);
     }
+    print("");
   }
 
   void desenharCentralizado() {
-    int altura = [lado1, lado2, lado3].reduce(max).toInt();
+    int altura = _lado1.toInt();
     for (int i = 1; i <= altura; i++) {
-      print((" " * (altura - i)) + (caractere * (2 * i - 1)));
+      String espaços = " " * (altura - i);
+      String icones = _caractere * (2 * i - 1);
+      print("$espaços$icones");
     }
+    print("");
   }
 
   void exibirResumo() {
-    print("Triângulo ($lado1, $lado2, $lado3) | Área: ${calcularArea().toStringAsFixed(2)} | Perímetro: ${calcularPerimetro()}");
+    print("Lados: $_lado1, $_lado2, $_lado3");
+    print("Área (Heron): ${calcularArea().toStringAsFixed(2)}");
+    print("Perímetro: ${calcularPerimetro()}\n");
   }
 }

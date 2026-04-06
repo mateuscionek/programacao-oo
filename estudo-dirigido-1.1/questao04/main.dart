@@ -1,11 +1,18 @@
 import 'lampada.dart';
 
 void main() {
-  Lampada lampada = Lampada();
+  Lampada l1 = Lampada();
 
-  for (int i = 0; i < 6; i++) {
-    lampada.ligar();
-    lampada.exibirEstado();
-    lampada.desligar();
-  }
+  l1.ligar();
+  l1.exibirEstado();
+
+  l1.desligar();
+  l1.exibirEstado();
+
+  l1.ligar();
+  l1.ligar();
+  l1.ligar();
+  l1.ligar();
+
+  l1.exibirEstado();
 }

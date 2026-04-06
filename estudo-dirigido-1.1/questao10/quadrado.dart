@@ -1,25 +1,31 @@
 class Quadrado {
-  double lado;
-  String caractere;
+  double _lado;
+  String _caractere;
 
-  Quadrado(this.lado, this.caractere) {
-    if (this.lado <= 0) this.lado = 1;
-    if (this.caractere.isEmpty || this.caractere.length > 1) this.caractere = "*";
+  Quadrado(this._lado, this._caractere) {
+    if (this._lado <= 0) this._lado = 1.0;
+    if (this._caractere.isEmpty || this._caractere.length > 1) this._caractere = "*";
   }
 
-  double calcularArea() => lado * lado;
-  double calcularPerimetro() => lado * 4;
+  double calcularArea() => _lado * _lado;
+
+  double calcularPerimetro() => _lado * 4;
 
   void desenhar() {
-    int tamanho = lado.toInt();
-    for (int i = 0; i < tamanho; i++) {
-      print(caractere * tamanho);
+    int l = _lado.toInt();
+    for (int i = 0; i < l; i++) {
+      print(_caractere * l);
     }
+    print("");
   }
 
   void exibirResumo() {
-    print("Quadrado de lado $lado | Área: ${calcularArea()} | Perímetro: ${calcularPerimetro()}");
+    print("Lado: $_lado");
+    print("Área: ${calcularArea()}");
+    print("Perímetro: ${calcularPerimetro()}\n");
   }
 
-  bool ehIgual(Quadrado outroQuadrado) => this.lado == outroQuadrado.lado;
+  bool ehIgual(Quadrado outro) {
+    return this._lado == outro._lado && this._caractere == outro._caractere;
+  }
 }

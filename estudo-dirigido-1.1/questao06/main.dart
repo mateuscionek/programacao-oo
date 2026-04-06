@@ -1,9 +1,14 @@
 import 'produto.dart';
 
 void main() {
-  Produto p1 = Produto(101, "Mangá do Naruto", 25.0, 12);
+  print("Produto Original");
+  Produto p1 = Produto(1, "Sabre de Luz", 150.0, 6); 
   p1.exibirResumo();
 
-  Produto p2 = Produto(102, "Sabre de Luz", 500.0, 3);
-  p2.exibirResumo();
+  print("Produto Substituído ");
+  p1.setCodigo(2);
+  p1.setNome("Poção Polissuco");
+  p1.setPrecoUnitario(80.0);
+  p1.setQuantidade(25);
+  p1.exibirResumo();
 }

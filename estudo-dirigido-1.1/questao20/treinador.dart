@@ -1,22 +1,22 @@
 import 'pokemon.dart';
 
-class Treinador {
-  String nome;
-  Pokemon p1, p2, p3;
+class _Treinador {
+  String _nome;
+  Pokemon _p1, _p2, _p3;
 
-  Treinador(this.nome, this.p1, this.p2, this.p3);
+  _Treinador(this._nome, this._p1, this._p2, this._p3);
 
-  int calcularPoderTotal() => p1.nivel + p2.nivel + p3.nivel;
+  int calcularPoderTotal() => _p1._nivel + _p2._nivel + _p3._nivel;
 
   Pokemon pokemonMaisForte() {
-    Pokemon forte = p1;
-    if (p2.nivel > forte.nivel) forte = p2;
-    if (p3.nivel > forte.nivel) forte = p3;
+    Pokemon forte = _p1;
+    if (_p2._nivel > forte._nivel) forte = _p2;
+    if (_p3._nivel > forte._nivel) forte = _p3;
     return forte;
   }
 
   void exibirTime() {
-    print("Treinador: $nome | Poder Total: ${calcularPoderTotal()}");
-    print("O mais forte é: ${pokemonMaisForte().nome}!\n");
+    print("Treinador: ${_nome} | Poder Total: ${calcularPoderTotal()}");
+    print("O mais forte é: ${pokemonMaisForte()._nome}!\n");
   }
 }

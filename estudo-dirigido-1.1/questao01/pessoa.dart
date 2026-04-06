@@ -1,13 +1,22 @@
 class Pessoa {
-  String nome;
-  int idade;
+  String _nome = "";
+  int _idade = 0;
 
-  Pessoa(this.nome, this.idade) {
-    if (this.nome.isEmpty) this.nome = "Indefinido";
-    if (this.idade < 0) this.idade = 0;
+  Pessoa(String nome, int idade) {
+    if (nome.isEmpty) {
+      _nome = "Indefinido";
+    } else {
+      _nome = nome;
+    }
+
+    if (idade < 0) {
+      _idade = 0;
+    } else {
+      _idade = idade;
+    }
   }
 
   void exibirDados() {
-    print("Pessoa: $nome, Idade: $idade anos.");
+    print("Pessoa: $_nome, Idade: $_idade anos.");
   }
 }

@@ -1,29 +1,30 @@
 class Lampada {
-  bool ligada;
-  int quantidadeLigacoes;
-  bool queimada;
-
-  Lampada() : ligada = false, quantidadeLigacoes = 0, queimada = false;
+  bool _ligada = false;
+  int _quantidadeLigacoes = 0;
+  bool _queimada = false;
 
   void ligar() {
-    if (!queimada) {
-      ligada = true;
-      quantidadeLigacoes++;
-      if (quantidadeLigacoes >= 5) {
-        queimada = true;
-        ligada = false;
+    if (_queimada == false) {
+      _ligada = true;
+      _quantidadeLigacoes++;
+      
+      if (_quantidadeLigacoes >= 5) {
+        _queimada = true;
+        _ligada = false;
       }
     }
   }
 
   void desligar() {
-    if (!queimada) ligada = false;
+    if (_queimada == false) {
+      _ligada = false;
+    }
   }
 
   void exibirEstado() {
-    if (queimada) {
+    if (_queimada == true) {
       print("Estado: Queimada");
-    } else if (ligada) {
+    } else if (_ligada == true) {
       print("Estado: Ligada");
     } else {
       print("Estado: Desligada");
